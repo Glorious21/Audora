@@ -10,9 +10,10 @@ The semantic memory layer is **[Walrus Memory](https://memory.walrus.xyz)**
 (`@mysten-incubation/memwal`) — no custom database or vector store. The MemWal
 relayer handles embedding, encryption, storage on Walrus, and semantic recall.
 
-> Built for the **Walrus Memory Prompt Jam**. The full build prompt —
-> paste it into any coding agent and get this app back — is in
-> [`prompts/audora.md`](prompts/audora.md).
+> Built for the **Walrus Memory Prompt Jam**. [`prompts/audora.md`](prompts/audora.md)
+> has two prompts: a **system prompt** you paste into `CLAUDE.md` / any MCP client
+> to turn your assistant into a creative memory, and the **build prompt** that
+> regenerates this whole app.
 
 ## The problem
 
@@ -42,11 +43,12 @@ discipline, no database to run.
 
 | | |
 |---|---|
-| 📄 Build prompt | [`prompts/audora.md`](prompts/audora.md) — copy-paste, fill the `.env` block, rebuild the whole app |
+| 📄 System prompt | [`prompts/audora.md`](prompts/audora.md#the-audora-system-prompt) — paste into any MCP client, fill the config block, done |
+| 📄 Build prompt | [`prompts/audora.md`](prompts/audora.md#build-the-reference-app-from-scratch) — copy-paste, rebuild the whole app |
 | ▶️ Run it | `cp .env.example .env` → `npm install` → `npm run dev` → **http://localhost:5173** (landing `/`, Studio `/studio`) |
 | 🩺 Connection test | `npm run step0` — health → `remember()` → `recall()` against the live relayer, prints **PASS** |
 | ⛓️ On-chain account | [`MemWalAccount` on Suiscan](https://suiscan.xyz/mainnet/object/0x392e1063bb45715908cfa751c82e232269fcaa5029eabaadd4d30c239687f6be) — mainnet, holds the memories |
-| 🛠️ Tool surface | `health` · `remember` · `getRememberStatus` · `recall` — each wired to a real UI action, not decoration |
+| 🛠️ Tool surface | `health` · `remember` · `remember_bulk` · `analyze` · `recall` · `restore` — the system prompt ties each to a trigger; the app wires `health` / `remember` / `getRememberStatus` / `recall` to real UI actions |
 | 🎬 Demo | click **Run 2-min demo** in the Studio — seeds four real memories, recalls one cold |
 
 ## How it works
