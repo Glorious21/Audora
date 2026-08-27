@@ -69,6 +69,27 @@ npm run build                 # emits dist/
 npm start                     # Express serves the API + the built UI on :3001
 ```
 
+### Deploy (Vercel)
+
+`vercel.json` is committed. The Vite UI builds to `dist/` (served as static
+assets); every `/api/*` request is routed to a single serverless function
+(`api/[...path].js`) that runs the same Express app via `createApp()`.
+
+```bash
+npx vercel            # first run: log in + link the project
+npx vercel --prod     # deploy
+```
+
+Or import the repo at [vercel.com/new](https://vercel.com/new). Either way, set
+these Environment Variables in the Vercel project:
+
+| var | value |
+|---|---|
+| `MEMWAL_ACCOUNT_ID` | your Walrus Memory account object ID |
+| `MEMWAL_KEY` | your Ed25519 delegate key |
+| `MEMWAL_SERVER_URL` | `https://relayer.memory.walrus.xyz` |
+| `MEMWAL_NAMESPACE` | `audora-demo` |
+
 ### Deploy (Render)
 
 `render.yaml` is a Blueprint. In Render: **New → Blueprint**, connect this repo,
@@ -94,9 +115,11 @@ src/                   React app
   pages/Studio.jsx     capture + recall + proofs  ( /studio )
   components/          panels, cards, AudoraLogo
 server/                Express API — holds the MemWal delegate key
-  index.js  dev.js     entrypoints (dev.js skips serving dist/)
+  app.js               createApp() — shared Express app factory
+  index.js  dev.js     standalone-server entrypoints (dev.js skips dist/)
   lib/memwal.js        the only place the MemWal client is created
   routes/memories.js   capture / status / recall
+api/[...path].js       Vercel serverless entry — runs createApp()
 scripts/step0-*.js     standalone connection test
 ```
 
