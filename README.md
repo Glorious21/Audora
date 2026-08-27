@@ -10,6 +10,39 @@ The semantic memory layer is **[Walrus Memory](https://memory.walrus.xyz)**
 (`@mysten-incubation/memwal`) — no custom database or vector store. The MemWal
 relayer handles embedding, encryption, storage on Walrus, and semantic recall.
 
+> Built for the **Walrus Memory Prompt Jam**. The full build prompt —
+> paste it into any coding agent and get this app back — is in
+> [`prompts/audora.md`](prompts/audora.md).
+
+## The problem
+
+**Who:** artists, producers, songwriters, beatmakers and writers — anyone who
+generates a lot of unfinished creative work, especially alongside an AI assistant.
+
+**Pain:** you make a beat at 2 a.m., save it as `idea_final_v3.als`, and move on.
+Six months later there are 400 files and no memory of which one had the vocal
+chop you loved, what it still needed, who you made it with, or where the stems
+live. The *context* around an idea — the mood, the collaborator, the missing
+piece, the session it came from — is the highest-value part of the work, and it
+evaporates the moment you close the session. Filenames don't hold it. You can't
+grep a feeling.
+
+**Solution:** Audora saves that context as one structured sentence to Walrus
+Memory the instant you capture it, and lets you recall it later in plain language
+— *"the moody amapiano thing with the vocal chop from that late session"* —
+ranked by meaning. No tags to maintain, no naming discipline, no database to run.
+
+## 60-second verify
+
+| | |
+|---|---|
+| 📄 Build prompt | [`prompts/audora.md`](prompts/audora.md) — copy-paste, fill the `.env` block, rebuild the whole app |
+| ▶️ Run it | `cp .env.example .env` → `npm install` → `npm run dev` → **http://localhost:5173** (landing `/`, Studio `/studio`) |
+| 🩺 Connection test | `npm run step0` — health → `remember()` → `recall()` against the live relayer, prints **PASS** |
+| ⛓️ On-chain account | [`MemWalAccount` on Suiscan](https://suiscan.xyz/mainnet/object/0x392e1063bb45715908cfa751c82e232269fcaa5029eabaadd4d30c239687f6be) — mainnet, holds the memories |
+| 🛠️ Tool surface | `health` · `remember` · `getRememberStatus` · `recall` — each wired to a real UI action, not decoration |
+| 🎬 Demo | click **Run 2-min demo** in the Studio — seeds four real memories, recalls one cold |
+
 ## How it works
 
 Every idea is stored as **one MemWal memory**, written as a consistent
