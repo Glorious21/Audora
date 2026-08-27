@@ -49,7 +49,7 @@ discipline, no database to run.
 | 🩺 Connection test | `npm run step0` — health → `remember()` → `recall()` against the live relayer, prints **PASS** |
 | ⛓️ On-chain account | [`MemWalAccount` on Suiscan](https://suiscan.xyz/mainnet/object/0x392e1063bb45715908cfa751c82e232269fcaa5029eabaadd4d30c239687f6be) — mainnet, holds the memories |
 | 🛠️ Tool surface | `health` · `remember` · `remember_bulk` · `analyze` · `recall` · `restore` — the system prompt ties each to a trigger; the app wires `health` / `remember` / `getRememberStatus` / `recall` to real UI actions |
-| 🎬 Demo | click **Run 2-min demo** in the Studio — seeds four real memories, recalls one cold |
+| 🎬 Demo | click **Run 2-min demo** in the Studio — seeds four real memories, recalls one cold  https://youtu.be/Qw8WglkZTa8|
 
 ## How it works
 
