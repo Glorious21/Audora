@@ -1,0 +1,25 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# Deploy: New → Blueprint → connect this repo → set the two secret values.
+services:
+  - type: web
+    name: audora
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      # Secrets — paste in the Render dashboard (not stored in git).
+      - key: MEMWAL_ACCOUNT_ID
+        sync: false
+      - key: MEMWAL_KEY
+        sync: false
+      # Non-secret config.
+      - key: MEMWAL_SERVER_URL
+        value: https://relayer.memory.walrus.xyz
+      - key: MEMWAL_NAMESPACE
+        value: audora-demo
+      - key: NODE_VERSION
+        value: "20"

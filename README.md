@@ -69,6 +69,20 @@ npm run build                 # emits dist/
 npm start                     # Express serves the API + the built UI on :3001
 ```
 
+### Deploy (Render)
+
+`render.yaml` is a Blueprint. In Render: **New → Blueprint**, connect this repo,
+then set the two secrets when prompted:
+
+| var | value |
+|---|---|
+| `MEMWAL_ACCOUNT_ID` | your Walrus Memory account object ID |
+| `MEMWAL_KEY` | your Ed25519 delegate key |
+
+`MEMWAL_SERVER_URL` and `MEMWAL_NAMESPACE` are set by the blueprint. Build runs
+`npm install && npm run build`; the service starts with `npm start` and Express
+serves both the API and the built UI on the port Render provides.
+
 ## Layout
 
 ```
