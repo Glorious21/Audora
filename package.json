@@ -4,6 +4,15 @@
   "private": true,
   "type": "module",
   "description": "Audora - a memory layer for creative work. Capture the context around beats, songs, lyrics and ideas; recall them later in natural language. Backed by Walrus Memory (MemWal). Single codebase: Express API + React UI.",
+  "author": "Glorious21",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Glorious21/Audora.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Glorious21/Audora/issues"
+  },
+  "homepage": "https://github.com/Glorious21/Audora#readme",
   "engines": {
     "node": ">=20"
   },
