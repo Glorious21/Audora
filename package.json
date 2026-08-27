@@ -1,0 +1,41 @@
+{
+  "name": "audora",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Audora - a memory layer for creative work. Capture the context around beats, songs, lyrics and ideas; recall them later in natural language. Backed by Walrus Memory (MemWal). Single codebase: Express API + React UI.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "step0": "node scripts/step0-connection-test.js",
+    "dev": "concurrently -k -n api,web -c blue,magenta \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "node --watch server/dev.js",
+    "dev:web": "vite",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "preview": "npm run build && npm start"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
+    "@fontsource-variable/inter": "^5.1.0",
+    "@fontsource-variable/jetbrains-mono": "^5.1.0",
+    "@mui/material": "^6.1.9",
+    "@mysten-incubation/memwal": "^0.1.5",
+    "@mysten/seal": "^1.1.3",
+    "@mysten/sui": "^2.16.2",
+    "@mysten/walrus": "^1.1.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "framer-motion": "^11.13.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "vite": "^6.0.3"
+  }
+}

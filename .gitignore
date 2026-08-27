@@ -1,0 +1,16 @@
+# secrets — never commit
+.env
+.env.local
+*.env
+
+# deps
+node_modules/
+
+# builds
+dist/
+
+# logs / os
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db

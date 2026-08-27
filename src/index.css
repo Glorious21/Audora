@@ -1,0 +1,176 @@
+/* ─────────────────────────────────────────────────────────────
+   Audora — design tokens (light, editorial · blue accent)
+   ───────────────────────────────────────────────────────────── */
+:root {
+  /* surfaces */
+  --bg: #fbfbfd;
+  --bg-tint: #f4f6fb;
+  --surface: #ffffff;
+  --surface-2: #f6f7f9;
+  --surface-3: #eef0f4;
+
+  /* lines */
+  --line: #e7e8ee;
+  --line-soft: rgba(15, 20, 40, 0.06);
+  --line-strong: #d7d9e2;
+
+  /* ink */
+  --text: #0d0e12;
+  --text-2: #545a68;
+  --text-3: #8a909e;
+
+  /* accent — blue */
+  --accent: #2f6fed;
+  --accent-bright: #4c85ff;
+  --accent-strong: #1f57c9;
+  --accent-dim: rgba(47, 111, 237, 0.09);
+  --accent-tint: rgba(47, 111, 237, 0.14);
+  --accent-ring: rgba(47, 111, 237, 0.18);
+  --accent-ink: #ffffff;
+
+  /* status */
+  --green: #16a34a;
+  --green-dim: rgba(22, 163, 74, 0.12);
+  --red: #e5484d;
+  --red-dim: rgba(229, 72, 77, 0.09);
+  --red-border: rgba(229, 72, 77, 0.28);
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -2px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 24px 60px -20px rgba(31, 87, 201, 0.28);
+
+  --radius: 14px;
+  --radius-sm: 10px;
+  --radius-lg: 20px;
+  --pill: 999px;
+
+  --maxw: 1140px;
+  --font-ui: "Inter Variable", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* back-compat aliases so component styles read from the new palette */
+  --panel: var(--surface);
+  --panel-2: var(--surface-2);
+  --panel-3: var(--surface-3);
+  --bg-deep: var(--surface-2);
+  --amber: var(--accent);
+  --amber-bright: var(--accent-bright);
+  --amber-dim: var(--accent-dim);
+  --amber-ink: var(--accent-ink);
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  min-height: 100dvh;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: -0.021em;
+  color: var(--text);
+  overflow-wrap: break-word;
+}
+
+a { color: inherit; }
+
+::selection {
+  background: var(--accent-tint);
+  color: var(--accent-strong);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--surface-3) transparent;
+}
+*::-webkit-scrollbar { width: 9px; height: 9px; }
+*::-webkit-scrollbar-thumb { background: var(--surface-3); border-radius: 999px; }
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  letter-spacing: -0.01em;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.kicker {
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+button {
+  font-family: var(--font-ui);
+}
+
+/* shared pill button primitives */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: var(--pill);
+  border: 1px solid transparent;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.12s ease, background 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.btn:active { transform: scale(0.98); }
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: 0 8px 20px -10px var(--accent-ring);
+}
+.btn-primary:hover { background: var(--accent-strong); }
+.btn-primary:disabled {
+  background: var(--surface-3);
+  color: var(--text-3);
+  cursor: default;
+  box-shadow: none;
+}
+.btn-ghost {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--line-strong);
+}
+.btn-ghost:hover { border-color: var(--text-3); background: var(--surface-2); }
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
