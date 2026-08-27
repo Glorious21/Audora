@@ -16,21 +16,27 @@ relayer handles embedding, encryption, storage on Walrus, and semantic recall.
 
 ## The problem
 
-**Who:** artists, producers, songwriters, beatmakers and writers — anyone who
-generates a lot of unfinished creative work, especially alongside an AI assistant.
+**Who:** producers, songwriters and beatmakers — but also writers, screenwriters,
+designers, filmmakers, photographers and game devs. Anyone who generates more raw
+ideas than they can finish, especially alongside an AI assistant. Not just music.
 
-**Pain:** you make a beat at 2 a.m., save it as `idea_final_v3.als`, and move on.
-Six months later there are 400 files and no memory of which one had the vocal
-chop you loved, what it still needed, who you made it with, or where the stems
-live. The *context* around an idea — the mood, the collaborator, the missing
-piece, the session it came from — is the highest-value part of the work, and it
-evaporates the moment you close the session. Filenames don't hold it. You can't
-grep a feeling.
+**Pain:** a creative forgets an idea because there's no consistent way to catch
+it. One goes in a voice memo, the next in a Notion page, the next on a napkin,
+the next as `idea_final_v3.als` — a different place and a different shape every
+time, so there's nothing to search. You make a beat (or draft a verse, or sketch
+a shot list) at 2 a.m., save the file, and move on. Six months later there are
+400 fragments across five apps and no memory of which one had the part you loved,
+what it still needed, who you made it with, or where it lives. The *context*
+around an idea — the mood, the collaborator, the missing piece, the session it
+came from — is the highest-value part of the work, and it evaporates the moment
+you close the session. Filenames don't hold it. You can't grep a feeling.
 
-**Solution:** Audora saves that context as one structured sentence to Walrus
-Memory the instant you capture it, and lets you recall it later in plain language
-— *"the moody amapiano thing with the vocal chop from that late session"* —
-ranked by meaning. No tags to maintain, no naming discipline, no database to run.
+**Solution:** Audora gives every idea *one consistent shape and one place*. It
+saves the context as a single structured sentence to Walrus Memory the instant
+you capture it, and lets you recall it later in plain language — *"the moody
+thing with the vocal chop from that late session"*, *"the story idea about the
+lighthouse keeper"* — ranked by meaning. No tags to maintain, no naming
+discipline, no database to run.
 
 ## 60-second verify
 
